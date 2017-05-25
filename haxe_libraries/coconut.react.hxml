@@ -1,0 +1,5 @@
+# @install: lix --silent download https://github.com/kevinresol/coconut.react/archive/eef8671e04f87fb361edd048a98a3579f5d20737.tar.gz into coconut.react/0.0.0/github/eef8671e04f87fb361edd048a98a3579f5d20737
+-D coconut.react=0.0.0
+-cp ${HAXESHIM_LIBCACHE}/coconut.react/0.0.0/github/eef8671e04f87fb361edd048a98a3579f5d20737/src
+
+-lib coconut.ui
