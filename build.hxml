@@ -1,5 +1,4 @@
 -cp src
 -main Main
--js bin/generated/ios/main.js
 -lib coconut.react
 -lib react-native
