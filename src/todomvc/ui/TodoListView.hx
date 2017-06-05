@@ -7,13 +7,16 @@ import react.native.api.*;
 
 class TodoListView extends coconut.ui.View<{todos:TodoList, filter:TodoFilter}> {
   static var styles = StyleSheet.create({
+    app: {
+      paddingTop: 20,
+    },
     input: {
       height: 30,
     }
   });
   
   function render() '
-    <View>
+    <View style=${styles.app}>
       <View>
         <TextInput style=${styles.input} onSubmitEditing={e => { todos.add(e.nativeEvent.text); e.nativeEvent.text = ""; }} />
         <if {todos.items.length > 0}>

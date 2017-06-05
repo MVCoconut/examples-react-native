@@ -25,8 +25,8 @@ class TodoItemView extends coconut.ui.View<{ item: TodoItem, ondeleted: Void->Vo
       }
 
     return @hxx '
-      <View >
-        <!--<TextInput type="checkbox" checked={item.completed} onchange={e => item.completed = e.target.checked} />-->
+      <View>
+        <Switch value={item.completed} onValueChange={v => item.completed = v} />
         <if {isEditing}>
           <TextInput style=${styles.input} value={item.description} onChangeText={v => edit(v)} onBlur={_ => isEditing = false} />
         <else>
