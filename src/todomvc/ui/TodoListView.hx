@@ -20,7 +20,7 @@ class TodoListView extends coconut.ui.View<{todos:TodoList, filter:TodoFilter}> 
       margin: 5,
       borderWidth: 1,
       borderColor: 'grey',
-      height: 30,
+      height: 40,
     },
     filterContainer: {
       marginTop: 20,
@@ -32,22 +32,18 @@ class TodoListView extends coconut.ui.View<{todos:TodoList, filter:TodoFilter}> 
     },
   });
   
-  @:state var input:String = '';
+  var input:TextInput;
   
   function render() '
     <View style=${styles.app}>
       <View>
-        <TextInput style=${styles.input} value=${input} onChangeText=${v => input = v} onSubmitEditing=${[] => { todos.add(input); input = ""; }} />
+        <TextInput ref=${i => input = i} style=${styles.input} onSubmitEditing=${e => { todos.add(e.nativeEvent.text); input.clear(); }} />
         <View style=${styles.markAllContainer}>
           <if ${todos.items.length > 0}>
             <if ${todos.items.exists(TodoItem.isActive)}>
-              <TouchableHighlight onPress=${[] => for (i in todos.items) i.completed = true}>
-                <View><Text>Mark all as completed</Text></View>
-              </TouchableHighlight>
+              <Button onPress=${[] => for (i in todos.items) i.completed = true} title="Mark all as completed" />
             <else>
-              <TouchableHighlight onPress=${[] => for (i in todos.items) i.completed = false}>
-                <View><Text>Unmark all as completed</Text></View>
-              </TouchableHighlight>
+              <Button onPress=${[] => for (i in todos.items) i.completed = false} title="Unmark all as completed" />
             </if>
           </if>
         </View>
@@ -68,12 +64,10 @@ class TodoListView extends coconut.ui.View<{todos:TodoList, filter:TodoFilter}> 
         </Text>
         <View style=${styles.filterContainer}>
           <for ${f in filter.options}>
-              <TouchableHighlight onPress=${[] => filter.toggle(f.value)}>
-                <View style=${styles.filter}><Text>${f.name}</Text></View>
-              </TouchableHighlight>
+              <Button onPress=${[] => filter.toggle(f.value)} title=${f.name} />
           </for>
           <if ${todos.items.exists(TodoItem.isCompleted)}>
-            <TouchableHighlight onPress=${todos.clearCompleted}><Text>Clear Completed</Text></TouchableHighlight>
+            <Button onPress=${todos.clearCompleted} title="Clear Completed" />
           </if>
         </View>
       </View>
