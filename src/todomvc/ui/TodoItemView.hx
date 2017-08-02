@@ -41,6 +41,7 @@ class TodoItemView extends coconut.ui.View<{ item: TodoItem, ondeleted: Void->Vo
 
     return @hxx '
       <View style=${styles.row}>
+        <Text>id: ${Std.string(id)}</Text>
         <Switch value=${item.completed} onValueChange=${v => item.completed = v} />
         <if ${isEditing}>
           <TextInput style=${styles.input} autoFocus=${true} defaultValue=${item.description} onEndEditing=${e => edit(e.nativeEvent.text)} onBlur=${_ => isEditing = false} />

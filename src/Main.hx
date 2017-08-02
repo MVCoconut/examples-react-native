@@ -1,13 +1,7 @@
 package;
 
 import react.ReactComponent;
-import react.ReactMacro.jsx;
 import react.native.api.*;
-import react.native.component.View as ReactNativeView;
-import react.native.component.Text as ReactNativeText;
-import react.native.component.ListView;
-import coconut.ui.View as CoconutView;
-import coconut.Ui.hxx;
 import todomvc.data.*;
 import todomvc.ui.*;
 
