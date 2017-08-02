@@ -2,3 +2,6 @@
 -main Main
 -lib coconut.react
 -lib react-native
+-dce full
+
+--macro include('react.native.component')

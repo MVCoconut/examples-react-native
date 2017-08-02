@@ -7,8 +7,10 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0"
+		"react": "15.6",
+		"react-dom": "15.6",
+		"react-native": "0.44.0",
+		"react-native-web": "^0.0.119"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",
