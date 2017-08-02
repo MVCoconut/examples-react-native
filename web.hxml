@@ -1,0 +1,5 @@
+build.hxml
+-D web
+-js bin/generated/web/main.js
+
+-cmd webpack

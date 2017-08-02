@@ -9,7 +9,12 @@ import coconut.Ui.*;
 using tink.CoreApi;
 
 class Main {
-	static function main() {}
+	static function main() {
+		#if web
+			AppRegistry.registerComponent('MyApp', function() return App);
+			AppRegistry.runApplication('MyApp', { rootTag: js.Browser.document.getElementById('react-root') });
+		#end
+	}
 }
 
 @:expose('App')
