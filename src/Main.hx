@@ -3,51 +3,57 @@ package;
 import react.ReactComponent;
 import react.ReactMacro.jsx;
 import react.native.api.*;
-import react.native.component.View as ReactNativeView;
-import react.native.component.Text as ReactNativeText;
-import coconut.react.Dom.*;
-import coconut.react.Wrapper;
-import coconut.ui.View as CoconutView;
+import react.native.component.*;
+import coconut.Ui.*;
+
+using tink.CoreApi;
 
 class Main {
-	
-	public static var styles = StyleSheet.create({
-		container: {
-			flex: 1,
-			justifyContent: 'center',
-			alignItems: 'center',
-			backgroundColor: '#F5FCFF',
-		},
-		text: {
-			fontSize: 20,
-			textAlign: 'center',
-			margin: 10,
-		},
-	});
-	
-	static function main() {
-		
-	}
+	static function main() {}
 }
 
 @:expose('App')
 class App extends ReactComponent {
+	
+	var data = {
+		var state = new tink.state.State(null);
+		haxe.Timer.delay(function() state.set(None), 2000);
+		new Data({profile: state});
+	}
+	
 	override function render() {
-		return jsx('<Wrapper view=${new MainView({})} />');
+		return new MainView({data: data}).reactify();
 	}
 }
 
-class MainView extends CoconutView<{}> {
-	@:state var counter:Int = 0;
-	
-	function render() {
-		return node(ReactNativeView, {style: Main.styles.container} , [
-			node(ReactNativeText, {style: Main.styles.text}, ['Hello! $counter'])
-		]);
-	}
-	
-	override function init() {
-		var timer = new haxe.Timer(500);
-		timer.run = function() counter = counter + 1;
-	}
+class Data implements coconut.data.Model {
+	@:external var profile:Option<String>;
+}
+
+class MainView extends coconut.ui.View<{data:Data}> {
+	function render() '
+		<View style=${{flex:1}}>
+			<switch ${data.profile}>
+				<case ${null}>
+					<LoadingScreen/>
+				<case ${None}>
+					<LoginScreen/>
+				<case ${Some(profile)}>
+					<HomeScreen/>
+			</switch>
+		</View>
+	';
+}
+
+
+class LoadingScreen extends coconut.ui.View<{}> {
+	function render() '<View style=${{flex:1, backgroundColor:'yellow'}}/>';
+}
+
+class LoginScreen extends coconut.ui.View<{}> {
+	function render() '<View style=${{flex:1, backgroundColor:'red'}}/>';
+}
+
+class HomeScreen extends coconut.ui.View<{}> {
+	function render() '<View style=${{flex:1, backgroundColor:'green'}}/>';
 }
