@@ -17,7 +17,7 @@ class Main {
 	}
 }
 
-@:expose('App')
+#if !web @:expose('App') #end
 class App extends ReactComponent {
 	
 	var data = {
@@ -36,18 +36,21 @@ class Data implements coconut.data.Model {
 }
 
 class MainView extends coconut.ui.View<{data:Data}> {
-	function render() '
-		<View style=${{flex:1}}>
-			<switch ${data.profile}>
-				<case ${null}>
-					<LoadingScreen/>
-				<case ${None}>
-					<LoginScreen/>
-				<case ${Some(profile)}>
-					<HomeScreen/>
-			</switch>
-		</View>
-	';
+	function render() {
+		trace('data: ' + data.profile);
+		return @hxx '
+			<View style=${{flex:1}}>
+				<switch ${data.profile}>
+					<case ${null}>
+						<LoadingScreen/>
+					<case ${None}>
+						<LoginScreen/>
+					<case ${Some(profile)}>
+						<HomeScreen/>
+				</switch>
+			</View>
+		';
+	}
 }
 
 
