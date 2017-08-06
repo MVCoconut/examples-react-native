@@ -1,6 +1,6 @@
-# @install: lix --silent download "https://github.com/MVCoconut/coconut.ui/archive/1c2ad61ba1fb3168e32e5f00722cf2ce52ac58be.tar.gz" into coconut.ui/0.6.1/github/1c2ad61ba1fb3168e32e5f00722cf2ce52ac58be
+# @install: lix --silent download "https://github.com/MVCoconut/coconut.ui/archive/f411e2bf81903390c1d7594c18521dc1917b3d97.tar.gz" into coconut.ui/0.6.1/github/f411e2bf81903390c1d7594c18521dc1917b3d97
 -D coconut.ui=0.6.1
--cp ${HAXESHIM_LIBCACHE}/coconut.ui/0.6.1/github/1c2ad61ba1fb3168e32e5f00722cf2ce52ac58be/src
+-cp ${HAXESHIM_LIBCACHE}/coconut.ui/0.6.1/github/f411e2bf81903390c1d7594c18521dc1917b3d97/src
 -D coconut_ui
 -lib tink_hxx
 -lib coconut.data
