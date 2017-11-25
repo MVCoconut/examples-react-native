@@ -1,13 +1,9 @@
 package;
 
 import react.ReactComponent;
-import react.ReactMacro.jsx;
 import react.native.api.*;
-import react.native.component.View as ReactNativeView;
-import react.native.component.Text as ReactNativeText;
-import coconut.react.Dom.*;
-import coconut.react.Wrapper;
-import coconut.ui.View as CoconutView;
+import todomvc.data.*;
+import todomvc.ui.*;
 
 class Main {
 	
@@ -26,28 +22,16 @@ class Main {
 	});
 	
 	static function main() {
-		
+		#if web
+			AppRegistry.registerComponent('MyApp', function() return App);
+			AppRegistry.runApplication('MyApp', { rootTag: js.Browser.document.getElementById('react-root') });
+		#end
 	}
 }
 
 @:expose('App')
 class App extends ReactComponent {
 	override function render() {
-		return jsx('<Wrapper view=${new MainView({})} />');
-	}
-}
-
-class MainView extends CoconutView<{}> {
-	@:state var counter:Int = 0;
-	
-	function render() {
-		return node(ReactNativeView, {style: Main.styles.container} , [
-			node(ReactNativeText, {style: Main.styles.text}, ['Hello! $counter'])
-		]);
-	}
-	
-	override function init() {
-		var timer = new haxe.Timer(500);
-		timer.run = function() counter = counter + 1;
+		return new TodoListView({filter: new TodoFilter(), todos: new TodoList()}).reactify();
 	}
 }

@@ -1,5 +1,5 @@
-# @install: lix --silent download https://github.com/haxe-react/haxe-react-native/archive/6e0605ea723cd96e5a9bd91de46076d1c4f9682c.tar.gz into haxe-react-native/0.1.1/github/6e0605ea723cd96e5a9bd91de46076d1c4f9682c
+# @install: lix --silent download https://github.com/haxe-react/haxe-react-native/archive/faabba4eccf7da92709a73262e8016d07b46bbda.tar.gz into haxe-react-native/0.1.1/github/faabba4eccf7da92709a73262e8016d07b46bbda
 -D react-native=0.1.1
--cp ${HAXESHIM_LIBCACHE}/haxe-react-native/0.1.1/github/6e0605ea723cd96e5a9bd91de46076d1c4f9682c/src
+-cp ${HAXESHIM_LIBCACHE}/haxe-react-native/0.1.1/github/faabba4eccf7da92709a73262e8016d07b46bbda/src
 
 -lib react
