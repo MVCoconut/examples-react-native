@@ -1,3 +1,5 @@
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/MVCoconut/Lobby)
+
 ```bash
 yarn global add lix.pm react-native-cli
 lix download
