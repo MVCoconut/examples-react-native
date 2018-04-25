@@ -5,7 +5,10 @@ import todomvc.data.*;
 import react.native.component.*;
 import react.native.api.*;
 
-class TodoListView extends coconut.ui.View<{todos:TodoList, filter:TodoFilter}> {
+class TodoListView extends coconut.ui.View {
+  @:attr var todos:TodoList;
+  @:attr var filter:TodoFilter;
+  
   static var styles = StyleSheet.create({
     app: {
       paddingTop: 20,

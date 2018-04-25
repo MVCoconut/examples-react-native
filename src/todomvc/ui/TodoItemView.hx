@@ -6,7 +6,10 @@ import react.native.component.*;
 import react.native.api.*;
 using StringTools;
 
-class TodoItemView extends coconut.ui.View<{ item: TodoItem, ondeleted: Void->Void }> {
+class TodoItemView extends coconut.ui.View {
+  
+  @:attr var item:TodoItem;
+  @:attr var ondeleted:Void->Void;
   
   static var styles = StyleSheet.create({
     row: {
