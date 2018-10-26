@@ -4,4 +4,4 @@
 -lib react-native
 -dce full
 
---macro include('react.native.component')
+# --macro include('react.native.component')

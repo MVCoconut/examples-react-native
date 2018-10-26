@@ -1,7 +1,10 @@
+const path = require('path');
+
 module.exports = {
 	entry: './bin/generated/web/main.js',
 	output: {
-		filename: './bin/generated/web/bundle.js'
+		path: path.resolve(__dirname, 'bin/generated/web'),
+		filename: 'bundle.js'
 	},
 	resolve: {
 		alias: {
