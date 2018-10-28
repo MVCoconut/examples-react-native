@@ -1,9 +1,9 @@
 -D coconut.react=0.0.0
-# @install: lix --silent download "gh://github.com/MVCoconut/coconut.react#954a1ea16fd22036cb9ef21a895820a5672e0e47" into coconut.react/0.0.0/github/954a1ea16fd22036cb9ef21a895820a5672e0e47
+# @install: lix --silent download "gh://github.com/MVCoconut/coconut.react#ce5af60a0c7d2c6fa31625269b5519f7a06ec567" into coconut.react/0.0.0/github/ce5af60a0c7d2c6fa31625269b5519f7a06ec567
 -lib coconut.ui
 -lib react
 -lib xDOM
--cp ${HAXE_LIBCACHE}/coconut.react/0.0.0/github/954a1ea16fd22036cb9ef21a895820a5672e0e47/src
+-cp ${HAXE_LIBCACHE}/coconut.react/0.0.0/github/ce5af60a0c7d2c6fa31625269b5519f7a06ec567/src
 --macro coconut.react.macros.Setup.all()
 -D coconut_react
 -D react_ignore_empty_render
