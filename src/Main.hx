@@ -31,7 +31,12 @@ class Main {
 
 @:expose('App')
 class App extends ReactComponent {
+	var data = new todomvc.ui.Dummy.Data();
 	override function render() {
-		return new TodoListView({filter: new TodoFilter(), todos: new TodoList()}).reactify();
+		return new Dummy({data: data}).reactify();
+		// return new TodoListView({filter: new TodoFilter(), todos: new TodoList()}).reactify(); 
+	}
+	override function componentDidMount() {
+		haxe.Timer.delay(data.update, 100);
 	}
 }
