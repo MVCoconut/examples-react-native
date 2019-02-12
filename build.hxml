@@ -1,7 +1,8 @@
 -cp src
 -main Main
--lib coconut.react
+-lib coconut.react-core
 -lib react-native
 -dce full
 
+-D react_devtools
 # --macro include('react.native.component')

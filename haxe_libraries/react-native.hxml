@@ -1,6 +1,4 @@
--D react-native=0.1.1
-# @install: lix --silent download "gh://github.com/haxe-react/haxe-react-native#6502fca4c23619be5184ad98e97abb7578eef003" into react-native/0.1.1/github/6502fca4c23619be5184ad98e97abb7578eef003
--lib react
--lib react-core
--lib quick-enums
--cp ${HAXE_LIBCACHE}/react-native/0.1.1/github/6502fca4c23619be5184ad98e97abb7578eef003/src
+-D react-native=0.2.1
+# @install: lix --silent download "gh://github.com/haxe-react/haxe-react-native#9c1c0d203541f37b3f0c398cdddf76917577e289" into react-native/0.2.1/github/9c1c0d203541f37b3f0c398cdddf76917577e289
+-lib react-next
+-cp ${HAXE_LIBCACHE}/react-native/0.2.1/github/9c1c0d203541f37b3f0c398cdddf76917577e289/src

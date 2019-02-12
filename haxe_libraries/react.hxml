@@ -1,7 +1,0 @@
--D react=1.4.0
-# @install: lix --silent download "gh://github.com/back2dos/haxe-react#7b1f103abb1cf95418e12f8d2dedbf97bce8761b" into react/1.4.0/github/7b1f103abb1cf95418e12f8d2dedbf97bce8761b
--lib tink_hxx
--cp ${HAXE_LIBCACHE}/react/1.4.0/github/7b1f103abb1cf95418e12f8d2dedbf97bce8761b/src/lib
---macro react.jsx.JsxStaticMacro.addHook()
---macro addGlobalMetadata('', '@:build(react.jsx.JsxStaticMacro.build())')
-

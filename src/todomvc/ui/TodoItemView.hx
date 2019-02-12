@@ -34,28 +34,22 @@ class TodoItemView extends coconut.ui.View {
   
   @:state var isEditing:Bool = false;
 
-  function render() {
-
-    function edit(entered:String)
-      switch entered.rtrim() {
-        case '': ondeleted();
-        case v: item.description = v;
-      }
-
-    return @hxx '
-      <View style=${styles.row}>
-        <Switch value=${item.completed} onValueChange=${v => item.completed = v} />
-        <if ${isEditing}>
-          <TextInput style=${styles.input} autoFocus=${true} value=${item.description} onChangeText=${edit} onBlur=${_ => isEditing = false} />
-        <else>
-          <Text style=${styles.description} onPress=${_ => this.isEditing = true}>${item.description}</Text>
-          <TouchableHighlight onPress=${ondeleted}><View><Text style=${styles.delete}>X</Text></View></TouchableHighlight>
-        </if>
-      </View>
-    ';
-  }
-  // override function afterPatching(_) 
-  //   if (isEditing)
-  //     get('input[type="text"]').focus();
+  function render() 
+    <View style={styles.row}>
+      <Switch value={item.completed} onValueChange={v -> item.completed = v} />
+      <if {isEditing}>
+        <TextInput style={styles.input} autoFocus={true} value={item.description} onChangeText={edit} onBlur={_ -> isEditing = false} />
+      <else>
+        <Text style={styles.description} onPress={_ -> this.isEditing = true}>{item.description}</Text>
+        <TouchableHighlight onPress={ondeleted}><View><Text style={styles.delete}>X</Text></View></TouchableHighlight>
+      </if>
+    </View>
+  ;
   
+
+  function edit(entered:String)
+    switch entered.rtrim() {
+      case '': ondeleted();
+      case v: item.description = v;
+    }
 }
