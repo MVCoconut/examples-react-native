@@ -37,7 +37,7 @@ class TodoListView extends coconut.ui.View {
   
   var input:TextInput;
   
-  function render()
+  function render() 
     <View style={styles.app}>
       <View>
         <TextInput ref={i -> input = i} style={styles.input} onSubmitEditing={e -> { todos.add(e.nativeEvent.text); input.clear(); }} />
@@ -51,7 +51,7 @@ class TodoListView extends coconut.ui.View {
           </if>
         </View>
       </View>
-
+      
       <for {item in todos.items}>
         <if {filter.matches(item)}>
           <TodoItemView key={item} item={item} ondeleted={todos.delete.bind(item)} />

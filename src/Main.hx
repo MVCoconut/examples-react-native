@@ -16,8 +16,8 @@ class Main {
 }
 
 @:expose('App')
-class App extends ReactComponent {
-	override function render() {
-		return new TodoListView({filter: new TodoFilter(), todos: new TodoList()}).reactify();
-	}
+class App extends coconut.ui.View {
+	function render()
+		<TodoListView filter={new TodoFilter()} todos={new TodoList()}/>
+	;
 }
