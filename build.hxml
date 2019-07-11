@@ -4,5 +4,5 @@
 -lib react-native
 -dce full
 
+-D no-deprecation-warnings
 -D react_devtools
-# --macro include('react.native.component')
