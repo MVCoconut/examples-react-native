@@ -12,9 +12,9 @@ class TodoList implements Model {
   }
   
   @:transition function delete(item)
-    return { items: items.filter(i => i != item) };
+    return { items: items.filter(i -> i != item) };
 
   @:transition function clearCompleted() 
-    return { items: items.filter(i => !i.completed) };
+    return { items: items.filter(i -> !i.completed) };
 
 }

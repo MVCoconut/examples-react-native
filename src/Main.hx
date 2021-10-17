@@ -9,7 +9,7 @@ class Main {
 	
 	static function main() {
 		#if web
-			AppRegistry.registerComponent('MyApp', function() return App);
+			AppRegistry.registerComponent('MyApp', function() return cast App);
 			AppRegistry.runApplication('MyApp', { rootTag: js.Browser.document.getElementById('react-root') });
 		#end
 	}
